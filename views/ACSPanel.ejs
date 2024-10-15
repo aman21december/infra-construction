@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: right;">
+        <form action="/v1/auth/logout">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+    <h2>New Proposal(Infra Renovation/Construction)</h2>
+    <h3>(i) Proposed Infrastructure Renovation/Construction Work List As Per Priority (Academic Building)</h3>
+    <% data.forEach(d => { %>
+    <% if(d.infraAcademics && d.infraAcademics.length > 0) { %>
+        <table border="1" cellspacing="5" cellpadding="0">
+            <thead>
+                <tr>
+                    <th>SerialNo</th>
+                    <th>Application ID</th>
+                    <th>CollegeName</th>
+                    <th>nameofproposal</th>
+                    <th>Estimate</th>
+                    <th>sourceoffunds</th>
+                    <th>Amount</th>
+                    <th>ReasonfornotspendingfrominternalSourcefunds</th>
+                    <th>Remarks</th>
+                    <th>UploadEstimateDocument</th>
+                    <th>UploadOtherDocument</th>
+                    <th>Status</th>
+                    <th>reason</th>
+                    <th>sanctionId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% d.infraAcademics.forEach(iA => { %>
+                    <tr>
+                        <td><%= iA.SerialNo %></td>
+                        <td><%= iA.applicationId %></td>
+                        <td><%= iA.CollegeName %></td>
+                        <td><%= iA.nameofproposal %></td>
+                        <td><%= iA.Estimate %></td>
+                        <td><%= iA.sourceoffunds %></td>
+                        <td><%= iA.Amount %></td>
+                        <td><%= iA.ReasonfornotspendingfrominternalSourcefunds %></td>
+                        <td><%= iA.Remarks%></td>
+                        <td><%= iA.UploadEstimateDocument %></td>
+                        <td><%= iA.UploadOtherDocument %></td>
+                        <td><%= iA.status%></td>
+                        <td><%= iA.reason %></td>
+                        <td><%= iA.sanctionId %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+    <h2>New Proposal(Infra Renovation/Construction)</h2>
+    <h3>(i) Proposed Infrastructure Renovation/Construction Work List As Per Priority (Administrative Building)</h3>
+    <% if(d.infraadminstratives && d.infraadminstratives.length > 0) { %>
+        <table border="1" cellspacing="5" cellpadding="0">
+            <thead>
+                <tr>
+                    <th>SerialNo</th>
+                    <th>Application ID</th>
+                    <th>CollegeName</th>
+                    <th>nameofproposal</th>
+                    <th>Estimate</th>
+                    <th>sourceoffunds</th>
+                    <th>Amount</th>
+                    <th>ReasonfornotspendingfrominternalSourcefunds</th>
+                    <th>Remarks</th>
+                    <th>UploadEstimateDocument</th>
+                    <th>UploadOtherDocument</th>
+                    <th>Status</th>
+                    <th>reason</th>
+                    <th>sanctionId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% d.infraadminstratives.forEach(iA => { %>
+                    <tr>
+                        <td><%= iA.SerialNo %></td>
+                        <td><%= iA.applicationId %></td>
+                        <td><%= iA.CollegeName %></td>
+                        <td><%= iA.nameofproposal %></td>
+                        <td><%= iA.Estimate %></td>
+                        <td><%= iA.sourceoffunds %></td>
+                        <td><%= iA.Amount %></td>
+                        <td><%= iA.ReasonfornotspendingfrominternalSourcefunds %></td>
+                        <td><%= iA.Remarks%></td>
+                        <td><%= iA.UploadEstimateDocument %></td>
+                        <td><%= iA.UploadOtherDocument %></td>
+                        <td><%= iA.status%></td>
+                        <td><%= iA.reason %></td>
+                        <td><%= iA.sanctionId %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+    <h2>New Proposal(Infra Renovation/Construction)</h2>
+    <h3>(i) Proposed Infrastructure Renovation/Construction Work List(Others) As Per Priority</h3>
+    <% if(d.infraothers && d.infraothers.length > 0) { %>
+        <table border="1" cellspacing="5" cellpadding="0">
+            <thead>
+                <tr>
+                    <th>SerialNo</th>
+                    <th>Application ID</th>
+                    <th>CollegeName</th>
+                    <th>nameofproposal</th>
+                    <th>Estimate</th>
+                    <th>sourceoffunds</th>
+                    <th>Amount</th>
+                    <th>ReasonfornotspendingfrominternalSourcefunds</th>
+                    <th>Remarks</th>
+                    <th>UploadEstimateDocument</th>
+                    <th>UploadOtherDocument</th>
+                    <th>Status</th>
+                    <th>reason</th>
+                    <th>sanctionId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% d.infraothers.forEach(iA => { %>
+                    <tr>
+                        <td><%= iA.SerialNo %></td>
+                        <td><%= iA.applicationId %></td>
+                        <td><%= iA.CollegeName %></td>
+                        <td><%= iA.nameofproposal %></td>
+                        <td><%= iA.Estimate %></td>
+                        <td><%= iA.sourceoffunds %></td>
+                        <td><%= iA.Amount %></td>
+                        <td><%= iA.ReasonfornotspendingfrominternalSourcefunds %></td>
+                        <td><%= iA.Remarks%></td>
+                        <td><%= iA.UploadEstimateDocument %></td>
+                        <td><%= iA.UploadOtherDocument %></td>
+                        <td><%= iA.status%></td>
+                        <td><%= iA.reason %></td>
+                        <td><%= iA.sanctionId %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+    <% }) %>
+</body>
+</html>

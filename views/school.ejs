@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: right;">
+        <form action="/v1/auth/logout">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+    <a href="/v1/school/data">Get previous applications</a>
+    <h2>New Proposal(Infra Renovation/Construction)</h2>
+    <h3>(i) Proposed Infrastructure Renovation/Construction Work List As Per Priority (Academic Building)</h3>
+    <form id="InfrastructureAcademic" enctype="multipart/form-data">
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Serial No.</th>
+            <th>University/College Name</th>
+            <th>Name of Proposals/plans as per priority(Academic Building)</th>
+            <th>Estimate</th>
+            <th>Source of funds</th>
+            <th>Amount</th>
+            <th>Reason for not spending from internal source funds</th>
+            <th>Remarks</th>
+            <th>Upload Estimate Document</th>
+            <th>Upload other Document</th>
+          </tr>
+        </thead>
+       <tbody id="tbody1">
+        <tr>
+          <td><input type="number" name="SerialNo"></td>
+          <td><input type="text" name="CollegeName"></td>
+          <td><Select name="nameofproposal"><option value="">Choose Academic Building</option><option value="Internal Source">शौचालय की उपलब्धता,</option> <option value="PM-USHA">पेयजल की सुविधा</option> <option value="State Plan">वर्गकक्ष</option> <option value="State Plan">प्रयोगशाला</option> <option value="State Plan"> स्मार्ट क्लसरूम</option> <option value="State Plan"> पुस्तकालय (ई-लाईब्रेरी) - पाठकों हेतु फर्नीचर</option> <option value="State Plan">Other</option></Select></td>
+          <td><input type="text" name="Estimate"></td>
+          <td><select name="sourceoffunds"><option value="">Select Source Of Funds</option> <option value="Internal Source">Internal Source</option> <option value="PM-USHA">PM-USHA</option> <option value="State Plan">State Plan</option></select></td>
+          <td><input type="number" name="Amount"></td>
+          <td><input type="text" name="ReasonfornotspendingfrominternalSourcefunds"></td>
+          <td><input type="text" name="Remarks"></td>
+          <td><input type="file" name="UploadEstimateDocument"></td>
+          <td><input type="file" name="UploadOtherDocument"></td>
+        </tr>
+       </tbody>
+      </table>
+      <button type="button" onclick="AddRow1()">Add Row</button>
+      <button type="Submit">Submit</button>
+    </form>
+    <h2>New Proposal(Infra Renovation/Construction)</h2>
+    <h3>(i) Proposed Infrastructure Renovation/Construction Work List As Per Priority (Administrative Building)</h3>
+    <form id="InfrastructureAdministrative" enctype="multipart/form-data">
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                  <th>Serial No.</th>
+                  <th>University/College Name</th>
+                  <th>Name of Proposals/plans as per priority(Administrative Building)</th>
+                  <th>Estimate</th>
+                  <th>Source of funds</th>
+                  <th>Amount</th>
+                  <th>Reason for not spending from internal source funds</th>
+                  <th>Remarks</th>
+                  <th>Upload Estimate Document</th>
+                  <th>Upload other Document</th>
+                </tr>
+              </thead>
+              <tbody id="tbody2">
+                <tr>
+                  <td><input type="number" name="SerialNo"></td>
+                  <td><input type="text" name="CollegeName"></td>
+                  <td><Select name="nameofproposal"><option value="">Choose Administrative Building</option> <option value="State Plan">कुलपति एवं अन्य वरीय पदाधिकारी कक्ष / प्रधानाचा</option> <option value="State Plan">कार्यालय कर्मी के लिये आवश्यक सुविधा आदि</option> <option value="State Plan">शिक्षक कक्ष</option> <option value="State Plan">वाचनालय</option> <option value="State Plan">परिसर विकास</option> <option value="State Plan">चहारदिवारी</option> <option value="State Plan">कॉमन रूम(Common Room)</option> <option value="State Plan">अन्य(Other)</option></Select></td>
+                  <td><input type="text" name="Estimate"></td>
+                  <td><select name="sourceoffunds"><option value="">Select Source Of Funds</option> <option value="Internal Source">Internal Source</option> <option value="PM-USHA">PM-USHA</option> <option value="State Plan">State Plan</option></select></td>
+                  <td><input type="number" name="Amount"></td>
+                  <td><input type="text" name="ReasonfornotspendingfrominternalSourcefunds"></td>
+                  <td><input type="text" name="Remarks"></td>
+                  <td><input type="file" name="UploadEstimateDocument"></td>
+                  <td><input type="file" name="UploadOtherDocument"></td>
+                </tr>
+               </tbody>
+        </table>
+        <button type="button" onclick="AddRow2()">Add Row</button>
+        <button type="Submit">Submit</button>
+    </form>
+    <h2>New Proposal(Infra Renovation/Construction)</h2>
+    <h3>(i) Proposed Infrastructure Renovation/Construction Work List(Others) As Per Priority</h3>
+    <form id="InfrastructureOther">
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                  <th>Serial No.</th>
+                  <th>University/College Name</th>
+                  <th>Name of Proposals/plans as per priority</th>
+                  <th>Estimate</th>
+                  <th>Source of funds</th>
+                  <th>Amount</th>
+                  <th>Reason for not spending from internal source funds</th>
+                  <th>Remarks</th>
+                  <th>Upload Estimate Document</th>
+                  <th>Upload other Document</th>
+                </tr>
+              </thead>
+              <tbody id="tbody3">
+                <tr>
+                  <td><input type="number" name="SerialNo"></td>
+                  <td><input type="text" name="CollegeName"></td>
+                  <td><input type="text" name="nameofproposal"></td>
+                  <td><input type="text" name="Estimate"></td>
+                  <td><select name="sourceoffunds"><option value="">Select Source Of Funds</option> <option value="Internal Source">Internal Source</option> <option value="PM-USHA">PM-USHA</option> <option value="State Plan">State Plan</option></select></td>
+                  <td><input type="number" name="Amount"></td>
+                  <td><input type="text" name="ReasonfornotspendingfrominternalSourcefunds"></td>
+                  <td><input type="text" name="Remarks"></td>
+                  <td><input type="file" name="UploadEstimateDocument"></td>
+                  <td><input type="file" name="UploadOtherDocument"></td>
+                </tr>
+               </tbody>
+        </table>
+        <button type="button" onclick="AddRow3()">Add Row</button>
+        <button type="Submit">Submit</button>
+    </form>
+    <script>
+            function AddRow1(){
+            let tbody=document.getElementById("tbody1")
+            const row= tbody.insertRow()
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            const cell4 = row.insertCell(3);
+            const cell5 = row.insertCell(4);
+            const cell6 = row.insertCell(5);
+            const cell7 = row.insertCell(6);
+            const cell8 = row.insertCell(7);
+            const cell9 = row.insertCell(8);
+            const cell10 = row.insertCell(9);
+
+            cell1.innerHTML = '<input type="number" name="SerialNo">';
+            cell2.innerHTML = '<input type="text" name="CollegeName">';
+            cell3.innerHTML = '<Select name="nameofproposal"><option value="">Choose Academic Building</option><option value="Internal Source">शौचालय की उपलब्धता,</option> <option value="PM-USHA">पेयजल की सुविधा</option> <option value="State Plan">वर्गकक्ष</option> <option value="State Plan">प्रयोगशाला</option> <option value="State Plan"> स्मार्ट क्लसरूम</option> <option value="State Plan"> पुस्तकालय (ई-लाईब्रेरी) - पाठकों हेतु फर्नीचर</option> <option value="State Plan">Other</option></Select>';
+            cell4.innerHTML = '<input type="text" name="Estimate">';
+            cell5.innerHTML = '<select name="sourceoffunds"><option value="">Select Source Of Funds</option> <option value="Internal Source">Internal Source</option> <option value="PM-USHA">PM-USHA</option> <option value="State Plan">State Plan</option></select>';
+            cell6.innerHTML = '<input type="number" name="Amount">';
+            cell7.innerHTML = '<input type="text" name="ReasonfornotspendingfrominternalSourcefunds">';
+            cell8.innerHTML = '<input type="text" name="Remarks">';
+            cell9.innerHTML = '<input type="file" name="UploadEstimateDocument">';
+            cell10.innerHTML = '<input type="file" name="UploadOtherDocument">';
+        }
+        document.getElementById("InfrastructureAcademic").addEventListener("submit",function(event){
+            event.preventDefault();
+            const data = [];
+
+            const rows = document.querySelectorAll("#tbody1 tr");
+            rows.forEach((row) => {
+                const inputs = row.querySelectorAll("input, select, textarea");
+                const rowData = {};
+
+                inputs.forEach(input => {
+                    rowData[input.name] = input.value;
+                });
+                data.push(rowData);
+            });
+            console.log(data)
+            fetch('/v1/school/academic',{
+                method:"POST",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(data),
+            }).then(response=>response.json())
+            .then(data=>{
+                console.log("Success:",data)
+            })
+            .catch(error=>{
+                console.error("Error:",error)
+            })
+        })
+
+        function AddRow2(){
+            let tbody=document.getElementById("tbody2")
+            const row= tbody.insertRow()
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            const cell4 = row.insertCell(3);
+            const cell5 = row.insertCell(4);
+            const cell6 = row.insertCell(5);
+            const cell7 = row.insertCell(6);
+            const cell8 = row.insertCell(7);
+            const cell9 = row.insertCell(8);
+            const cell10 = row.insertCell(9);
+
+            cell1.innerHTML = '<input type="number" name="SerialNo">';
+            cell2.innerHTML = '<input type="text" name="CollegeName">';
+            cell3.innerHTML = '<Select name="nameofproposal"><option value="">Choose Administrative Building</option> <option value="State Plan">कुलपति एवं अन्य वरीय पदाधिकारी कक्ष / प्रधानाचा</option> <option value="State Plan">कार्यालय कर्मी के लिये आवश्यक सुविधा आदि</option> <option value="State Plan">शिक्षक कक्ष</option> <option value="State Plan">वाचनालय</option> <option value="State Plan">परिसर विकास</option> <option value="State Plan">चहारदिवारी</option> <option value="State Plan">कॉमन रूम(Common Room)</option> <option value="State Plan">अन्य(Other)</option></Select>'
+            cell4.innerHTML = '<input type="text" name="Estimate">';
+            cell5.innerHTML = '<select name="sourceoffunds"><option value="">Select Source Of Funds</option> <option value="Internal Source">Internal Source</option> <option value="PM-USHA">PM-USHA</option> <option value="State Plan">State Plan</option></select>';
+            cell6.innerHTML = '<input type="number" name="Amount">';
+            cell7.innerHTML = '<input type="text" name="ReasonfornotspendingfrominternalSourcefunds">';
+            cell8.innerHTML = '<input type="text" name="Remarks">';
+            cell9.innerHTML = '<input type="file" name="UploadEstimateDocument">';
+            cell10.innerHTML = '<input type="file" name="UploadOtherDocument">';
+        }
+        document.getElementById("InfrastructureAdministrative").addEventListener("submit",function(event){
+            event.preventDefault();
+            const data = [];
+            
+            const rows = document.querySelectorAll("#tbody2 tr");
+            rows.forEach((row) => {
+                const inputs = row.querySelectorAll("input, select, textarea");
+                const rowData = {};
+
+                inputs.forEach(input => {
+                    rowData[input.name] = input.value;
+                });
+                data.push(rowData);
+            });
+            console.log(data)
+            fetch('/v1/school/administrative',{
+                method:"POST",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(data),
+            }).then(response=>response.json())
+            .then(data=>{
+                console.log("Success:",data)
+            })
+            .catch(error=>{
+                console.error("Error:",error)
+            })
+        })
+        function AddRow3(){
+            let tbody=document.getElementById("tbody3")
+            const row= tbody.insertRow()
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            const cell4 = row.insertCell(3);
+            const cell5 = row.insertCell(4);
+            const cell6 = row.insertCell(5);
+            const cell7 = row.insertCell(6);
+            const cell8 = row.insertCell(7);
+            const cell9 = row.insertCell(8);
+            const cell10 = row.insertCell(9);
+
+            cell1.innerHTML = '<input type="number" name="SerialNo">';
+            cell2.innerHTML = '<input type="text" name="CollegeName">';
+            cell3.innerHTML = '<input type="text" name="nameofproposal">'
+            cell4.innerHTML = '<input type="text" name="Estimate">';
+            cell5.innerHTML = '<select name="sourceoffunds"><option value="">Select Source Of Funds</option> <option value="Internal Source">Internal Source</option> <option value="PM-USHA">PM-USHA</option> <option value="State Plan">State Plan</option></select>';
+            cell6.innerHTML = '<input type="number" name="Amount">';
+            cell7.innerHTML = '<input type="text" name="ReasonfornotspendingfrominternalSourcefunds">';
+            cell8.innerHTML = '<input type="text" name="Remarks">';
+            cell9.innerHTML = '<input type="file" name="UploadEstimateDocument">';
+            cell10.innerHTML = '<input type="file" name="UploadOtherDocument">';
+        }
+        document.getElementById("InfrastructureOther").addEventListener("submit",function(event){
+            event.preventDefault();
+            const data = [];
+            
+            const rows = document.querySelectorAll("#tbody3 tr");
+            rows.forEach((row) => {
+                const inputs = row.querySelectorAll("input, select, textarea");
+                const rowData = {};
+
+                inputs.forEach(input => {
+                    rowData[input.name] = input.value;
+                });
+                data.push(rowData);
+            });
+            console.log(data)
+            fetch('/v1/school/other',{
+                method:"POST",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(data),
+            }).then(response=>response.json())
+            .then(data=>{
+                console.log("Success:",data)
+            })
+            .catch(error=>{
+                console.error("Error:",error)
+            })
+        }) 
+    </script>
+</body>
+</html>
