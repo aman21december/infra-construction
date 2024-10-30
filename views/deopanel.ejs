@@ -11,33 +11,47 @@
             <input type="submit" value="Logout">
         </form>
     </div>
-    <h2>New Proposal(Infra Renovation/Construction)</h2>
-    <h3>(i) Proposed Infrastructure Renovation/Construction Work List As Per Priority (Academic Building)</h3>
+    <form method="GET" action="/v1/deopanel/search">
+        <input type="text" name="CollegeName" placeholder="College Name" />
+        <input type="text" name="applicationId" placeholder="applicationId" />
+            <select name="status">
+            <option value="">--Select Status--</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Hold">Hold</option>
+        </select>
+        <input type="date" name="startDate" />
+        <input type="date" name="endDate" />
+        <button type="submit">Search</button>
+    </form>
+    <h2>Applications</h2>
+    <table id="tableData" border="1" cellspacing="5" cellpadding="0">
+        <thead>
+            <tr>
+                <th>SerialNo</th>
+                <th>Application ID</th>
+                <th>CollegeName</th>
+                <th>nameofproposal</th>
+                <th>Estimate</th>
+                <th>sourceoffunds</th>
+                <th>Amount</th>
+                <th>ReasonfornotspendingfrominternalSourcefunds</th>
+                <th>Remarks</th>
+                <th>UploadEstimateDocument</th>
+                <th>UploadOtherDocument</th>
+                <th>Status</th>
+                <th>reason</th>
+                <th>sanctionId</th>
+                <th>selectstatus</th>
+                <th>Give reason</th>
+                <th>sanctionID</th>
+            </tr>
+        </thead>
+        <tbody>
     <% data.forEach(d => { %>
     <% if(d.infraAcademics && d.infraAcademics.length > 0) { %>
-        <table border="1" cellspacing="5" cellpadding="0">
-            <thead>
-                <tr>
-                    <th>SerialNo</th>
-                    <th>Application ID</th>
-                    <th>CollegeName</th>
-                    <th>nameofproposal</th>
-                    <th>Estimate</th>
-                    <th>sourceoffunds</th>
-                    <th>Amount</th>
-                    <th>ReasonfornotspendingfrominternalSourcefunds</th>
-                    <th>Remarks</th>
-                    <th>UploadEstimateDocument</th>
-                    <th>UploadOtherDocument</th>
-                    <th>Status</th>
-                    <th>reason</th>
-                    <th>sanctionId</th>
-                    <th>selectstatus</th>
-                    <th>Give reason</th>
-                    <th>sanctionId</th>
-                </tr>
-            </thead>
-            <tbody>
+            
                 <% d.infraAcademics.forEach(iA => { %>
                     <form action="/v1/deo/update-applicationinfraacademic/<%= iA.applicationId %>" method="POST">
                     <tr>
@@ -72,98 +86,46 @@
                     </tr>
                 </form>
                 <% }) %>
-            </tbody>
-        </table>
+
     <% } %>
-    <h2>New Proposal(Infra Renovation/Construction)</h2>
-    <h3>(i) Proposed Infrastructure Renovation/Construction Work List As Per Priority (Administrative Building)</h3>
     <% if(d.infraadminstratives && d.infraadminstratives.length > 0) { %>
-        <table border="1" cellspacing="5" cellpadding="0">
-            <thead>
-                <tr>
-                    <th>SerialNo</th>
-                    <th>Application ID</th>
-                    <th>CollegeName</th>
-                    <th>nameofproposal</th>
-                    <th>Estimate</th>
-                    <th>sourceoffunds</th>
-                    <th>Amount</th>
-                    <th>ReasonfornotspendingfrominternalSourcefunds</th>
-                    <th>Remarks</th>
-                    <th>UploadEstimateDocument</th>
-                    <th>UploadOtherDocument</th>
-                    <th>Status</th>
-                    <th>reason</th>
-                    <th>sanctionId</th>
-                    <th>selectstatus</th>
-                    <th>Give reason</th>
-                    <th>sanctionId</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% d.infraadminstratives.forEach(iA => { %>
-                    <form action="/v1/deo/update-applicationinfraadministrative/<%= iA.applicationId %>" method="POST">
-                    <tr>
-                        <td><%= iA.SerialNo %></td>
-                        <td><%= iA.applicationId %></td>
-                        <td><%= iA.CollegeName %></td>
-                        <td><%= iA.nameofproposal %></td>
-                        <td><%= iA.Estimate %></td>
-                        <td><%= iA.sourceoffunds %></td>
-                        <td><%= iA.Amount %></td>
-                        <td><%= iA.ReasonfornotspendingfrominternalSourcefunds %></td>
-                        <td><%= iA.Remarks%></td>
-                        <td><%= iA.UploadEstimateDocument %></td>
-                        <td><%= iA.UploadOtherDocument %></td>
-                        <td><%= iA.status%></td>
-                        <td><%= iA.reason %></td>
-                        <td><%= iA.sanctionId %></td>
-                        <td> 
-                            <select name="status" id="status" required>
-                              <option value="" disabled selected>Select status</option>
-                              <option value="Approved">Approve</option>
-                              <option value="On Hold">Hold</option>
-                              <option value="Rejected">Reject</option>
-                            </select></td>
-                            <td>  <div>
-                                <textarea name="reason" id="reason" cols="30" rows="4"></textarea>
-                              </div></td>
-                            <td> <div>
-                                <input type="text" name="sanctionId" id="sanctionId">
-                              </div></td>
-                            <td><button type="submit">Update Status</button></td>
-                    </tr>
-                </form>
-                <% }) %>
-            </tbody>
-        </table>
+        <% d.infraadminstratives.forEach(iA => { %>
+            <form action="/v1/deo/update-applicationinfraadministrative/<%= iA.applicationId %>" method="POST">
+            <tr>
+                <td><%= iA.SerialNo %></td>
+                <td><%= iA.applicationId %></td>
+                <td><%= iA.CollegeName %></td>
+                <td><%= iA.nameofproposal %></td>
+                <td><%= iA.Estimate %></td>
+                <td><%= iA.sourceoffunds %></td>
+                <td><%= iA.Amount %></td>
+                <td><%= iA.ReasonfornotspendingfrominternalSourcefunds %></td>
+                <td><%= iA.Remarks%></td>
+                <td><%= iA.UploadEstimateDocument %></td>
+                <td><%= iA.UploadOtherDocument %></td>
+                <td><%= iA.status%></td>
+                <td><%= iA.reason %></td>
+                <td><%= iA.sanctionId %></td>
+                <td> 
+                    <select name="status" id="status" required>
+                      <option value="" disabled selected>Select status</option>
+                      <option value="Approved">Approve</option>
+                      <option value="On Hold">Hold</option>
+                      <option value="Rejected">Reject</option>
+                    </select></td>
+                    <td>  <div>
+                        <textarea name="reason" id="reason" cols="30" rows="4"></textarea>
+                      </div></td>
+                    <td> <div>
+                        <input type="text" name="sanctionId" id="sanctionId">
+                      </div></td>
+                    <td><button type="submit">Update Status</button></td>
+            </tr>
+        </form>    
+        <% }) %>
     <% } %>
-    <h2>New Proposal(Infra Renovation/Construction)</h2>
-    <h3>(i) Proposed Infrastructure Renovation/Construction Work List(Others) As Per Priority</h3>
+    
     <% if(d.infraothers && d.infraothers.length > 0) { %>
-        <table border="1" cellspacing="5" cellpadding="0">
-            <thead>
-                <tr>
-                    <th>SerialNo</th>
-                    <th>Application ID</th>
-                    <th>CollegeName</th>
-                    <th>nameofproposal</th>
-                    <th>Estimate</th>
-                    <th>sourceoffunds</th>
-                    <th>Amount</th>
-                    <th>ReasonfornotspendingfrominternalSourcefunds</th>
-                    <th>Remarks</th>
-                    <th>UploadEstimateDocument</th>
-                    <th>UploadOtherDocument</th>
-                    <th>Status</th>
-                    <th>reason</th>
-                    <th>sanctionId</th>
-                    <th>selectstatus</th>
-                    <th>Give reason</th>
-                    <th>sanctionId</th>
-                </tr>
-            </thead>
-            <tbody>
                 <% d.infraothers.forEach(iA => { %>
                     <form action="/v1/deo/update-applicationinfraother/<%= iA.applicationId %>" method="POST">
                     <tr>
@@ -198,12 +160,58 @@
                     </tr>
                 </form>
                 <% }) %>
-            </tbody>
-        </table>
     <% } %>
     <% }) %>
-    <script>
+    </tbody>
+    </table>
+    <button onclick="exportTableToExcel('tableData', 'table-data')">Export to Excel</button>
+    <button onclick="exportTableToPDF('tableData')">Export to PDF</button>
+    <div style="text-align: center; margin-top: 20px;">
+        <% if (currentPage > 1) { %>
+            <a href="http://localhost:5000/v1/deopanel/deo?page=<%= currentPage - 1 %>&limit=1">Previous</a>
+        <% } %>
         
+        <% for (let i = 1; i <= totalPages; i++) { %>
+            <% if (i === currentPage) { %>
+                <strong><%= i %></strong>
+            <% } else { %>
+                <a href="http://localhost:5000/v1/deopanel/deo?page=<%= i %>&limit=1"><%= i %></a>
+            <% } %>
+        <% } %>
+        
+        <% if (currentPage < totalPages) { %>
+            <a href="http://localhost:5000/v1/deopanel/deo?page=<%= currentPage + 1 %>&limit=1">Next</a>
+        <% } %>
+    </div>
+    <script src="/js/xlsx.full.min.js"></script>
+    <script>
+      function exportTableToExcel(tableID, filename = '') {
+        const table = document.getElementById(tableID);
+        const workbook = XLSX.utils.table_to_book(table, { sheet: 'Sheet1' });
+        const excelFilename = filename ? filename + '.xlsx' : 'exported-data.xlsx';
+        XLSX.writeFile(workbook, excelFilename);
+      }
+    </script>
+    <script src="/js/jspdf.umd.min.js"></script>
+    <script src="/js/jspdf.plugin.autotable.min.js"></script>
+    <script>
+      function exportTableToPDF(tableID) {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        const table = document.getElementById(tableID);
+        const rows = Array.from(table.rows);
+        
+        const data = rows.map(row => {
+          return Array.from(row.cells).map(cell => cell.innerText);
+        });
+    
+        doc.autoTable({
+          head: [data[0]], // table header
+          body: data.slice(1), // table body
+        });
+    
+        doc.save('table-data.pdf');
+      }
     </script>
 </body>
 </html>

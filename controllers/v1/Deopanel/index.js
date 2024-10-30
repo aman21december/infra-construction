@@ -1,2 +1,2 @@
-const {getData} = require("./deopanel");
-module.exports = {getData};
+const {getData,searchAndFilter} = require("./deopanel");
+module.exports = {getData,searchAndFilter};

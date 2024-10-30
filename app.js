@@ -20,6 +20,8 @@ app.use(cookieParser());
 app.set("view engine", "ejs");
 app.use("/", express.static(path.join(__dirname, "../public")));
 
+
+
 app
   .use(morganLogger)
   .use(cors())

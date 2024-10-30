@@ -7,5 +7,12 @@ const getData = async(req,res,next)=>{
       next(error);
     }  
 }
+const searchAndFilter =async(req,res,next)=>{
+    try {
+        return await new deopanel().searchAndFilter(req,res,next)
+    } catch (error) {
+      next(error);
+    }  
+}
 
-module.exports={getData};
+module.exports={getData,searchAndFilter};
