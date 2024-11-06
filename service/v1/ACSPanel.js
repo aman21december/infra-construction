@@ -1,8 +1,13 @@
+const { Op } = require("sequelize");
 const infraacadmic = require("../../models/infraacademic");
 const infraadminstrative = require("../../models/infraadminstrative");
 const infraother = require("../../models/infraother");
 const { User } = require("../../models/user");
-
+const fs = require("fs");
+const path = require("path");
+const puppeteer = require("puppeteer");
+const ExcelJS = require("exceljs");
+const { v4: uuidv4 } = require("uuid");
 class ACSPanel{
   async getData(req, res, next) {
     const {
