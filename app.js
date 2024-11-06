@@ -64,7 +64,7 @@ app.use("/v1", v1);
 app.use((err, req, res, next) => {
   handleError(err, res);
 });
-
+app.use('/downloads', express.static(path.join(__dirname, 'exports')));
 sequelize
   .sync()
   .then(() => {
