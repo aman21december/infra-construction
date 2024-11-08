@@ -119,14 +119,10 @@ const htmlContent = `
             <table>
                 <tr>
                     ${Object.keys(plainData[0]).map(key => `<th>${key}</th>`).join("")}
-                    <th>Infraadministrative</th>
-                    <th>Infraother</th>
                 </tr>
                 ${plainData.map(row => `
                     <tr>
                         ${Object.values(row).map(value => `<td>${value !== null && typeof value === 'object' ? JSON.stringify(value) : value}</td>`).join("")}
-                        <td>${row.infraadministrative ? JSON.stringify(row.infraadministrative) : 'N/A'}</td>
-                        <td>${row.infraother ? JSON.stringify(row.infraother) : 'N/A'}</td>
                     </tr>
                 `).join("")}
             </table>
